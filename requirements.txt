@@ -1,0 +1,6 @@
+mage-ai[postgres]
+mage-ai[azure]
+mage-ai[dbt]
+numpy
+faker
+fastavro
