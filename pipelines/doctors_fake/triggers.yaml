@@ -1,0 +1,16 @@
+triggers:
+- description: null
+  envs: []
+  last_enabled_at: 2025-01-13 12:02:36.258673
+  name: wandering star
+  pipeline_uuid: doctors_fake
+  schedule_interval: 30 09 * * *
+  schedule_type: time
+  settings:
+    timeout: '300'
+  sla: null
+  start_time: 2025-01-13 12:02:00
+  status: active
+  token: d1d48a3e78584c438c4a3af03f0c06dc
+  variables:
+    doctors: 500

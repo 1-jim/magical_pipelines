@@ -6,6 +6,7 @@ import json
 import random
 from datetime import datetime, timedelta
 import pandas as pd
+from pandas import DataFrame
 
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
@@ -13,7 +14,7 @@ if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
 @data_loader
-def load_data_from_faker(*args, **kwargs):
+def load_data_from_faker(df_doctors: DataFrame, *args, **kwargs):
 
     patient_count = int(int(kwargs['patients'])/2)
     doctor_count = int(kwargs['doctors'])
@@ -78,7 +79,9 @@ def load_data_from_faker(*args, **kwargs):
         def nhsDoctor(self) -> str:
             DROPTS=[]
             for _ in range(doctor_count):
-                DROPTS.append('Dr ' + fake.name())
+                random_doc = df_doctors.sample(n=1)
+                first_doc = random_doc.iloc[0, 0]
+                DROPTS.append(first_doc)
             return self.random_elements(DROPTS, length=1)[0]
 
         def nhsSurgery(self) -> str:
@@ -109,7 +112,7 @@ def load_data_from_faker(*args, **kwargs):
             'PRESENTING_ISSUES': fake.nhsJargon(num_sentences=5),
             'TREATMENT_GOALS': fake.nhsJargon(num_sentences=2),
             'ASSESSMENT_AND_PROGRESS': fake.nhsJargon(num_sentences=10),
-            'GP_NAME': fake.nhsDoctor(),
+            'DOCTOR_ID': fake.nhsDoctor(),
             'SURGERY_NAME': fake.nhsSurgery(),
             'DEPENDENTS': fake.nhsDependents(),
             'NEXT_APPOINTMENT': fake.nhsNextAppointment(),
@@ -130,7 +133,7 @@ def load_data_from_faker(*args, **kwargs):
             'PRESENTING_ISSUES': fake.nhsJargon(num_sentences=5),
             'TREATMENT_GOALS': fake.nhsJargon(num_sentences=2),
             'ASSESSMENT_AND_PROGRESS': fake.nhsJargon(num_sentences=10),
-            'GP_NAME': fake.nhsDoctor(),
+            'DOCTOR_ID': fake.nhsDoctor(),
             'SURGERY_NAME': fake.nhsSurgery(),
             'DEPENDENTS': fake.nhsDependents(),
             'NEXT_APPOINTMENT': fake.nhsNextAppointment(),

@@ -1,0 +1,16 @@
+triggers:
+- description: null
+  envs: []
+  last_enabled_at: 2025-01-13 12:02:56.068418
+  name: Faker Refresh
+  pipeline_uuid: patients_fake
+  schedule_interval: 59 09 * * *
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2025-01-09 13:59:00
+  status: active
+  token: 69099c796aa64636a732993ad97b413e
+  variables:
+    doctors: 50
+    patients: 10000

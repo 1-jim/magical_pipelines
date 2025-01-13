@@ -5,7 +5,7 @@ blocks:
     file_source:
       path: data_loaders/fakers/load_doctors.py
   downstream_blocks:
-  - fakers/load_patients
+  - fakers/export_doctors
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -21,51 +21,32 @@ blocks:
   color: null
   configuration:
     file_source:
-      path: data_loaders/fakers/load_patients.py
-  downstream_blocks:
-  - fakers/sink_patients
-  executor_config: null
-  executor_type: local_python
-  has_callback: false
-  language: python
-  name: fakers/load_patients
-  retry_config: null
-  status: executed
-  timeout: null
-  type: data_loader
-  upstream_blocks:
-  - fakers/load_doctors
-  uuid: fakers/load_patients
-- all_upstream_blocks_executed: true
-  color: null
-  configuration:
-    file_source:
-      path: data_exporters/fakers/sink_patients.py
+      path: data_exporters/fakers/export_doctors.py
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: fakers/sink_patients
+  name: fakers/export_doctors
   retry_config: null
   status: executed
   timeout: null
   type: data_exporter
   upstream_blocks:
-  - fakers/load_patients
-  uuid: fakers/sink_patients
+  - fakers/load_doctors
+  uuid: fakers/export_doctors
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
 conditionals: []
-created_at: '2025-01-10 13:52:58.866945+00:00'
+created_at: '2025-01-13 11:01:40.932507+00:00'
 data_integration: null
 description: null
 executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: Patients Fake
+name: doctors_fake
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -75,9 +56,8 @@ settings:
 spark_config: {}
 tags: []
 type: python
-uuid: patients_fake
+uuid: doctors_fake
 variables:
-  doctors: 1000
-  patients: 100000
+  doctors: 500
 variables_dir: /home/src/mage_data/demo1
 widgets: []
