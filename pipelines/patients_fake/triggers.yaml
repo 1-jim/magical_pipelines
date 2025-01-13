@@ -14,3 +14,18 @@ triggers:
   variables:
     doctors: 50
     patients: 10000
+- description: null
+  envs: []
+  last_enabled_at: 2025-01-13 16:41:52.900861
+  name: fabled spell
+  pipeline_uuid: patients_fake
+  schedule_interval: '@once'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2025-01-12 16:41:00
+  status: active
+  token: 60d92c81bfc94317b0eb86a9d5ff67bb
+  variables:
+    doctors: 1000
+    patients: 100000

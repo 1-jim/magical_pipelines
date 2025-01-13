@@ -14,3 +14,17 @@ triggers:
   token: d1d48a3e78584c438c4a3af03f0c06dc
   variables:
     doctors: 500
+- description: null
+  envs: []
+  last_enabled_at: 2025-01-13 12:07:10.022025
+  name: cheerful treasure
+  pipeline_uuid: doctors_fake
+  schedule_interval: '@once'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2025-01-12 12:07:00
+  status: active
+  token: 718e2728a9704b35b726bb79c2dc6372
+  variables:
+    doctors: 500

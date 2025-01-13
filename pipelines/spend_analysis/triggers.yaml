@@ -1,0 +1,14 @@
+triggers:
+- description: null
+  envs: []
+  last_enabled_at: 2025-01-13 21:38:23.708693
+  name: natural pine
+  pipeline_uuid: spend_analysis
+  schedule_interval: '@once'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2025-01-12 21:38:00
+  status: active
+  token: 0f8a994e41e942d39d6097f412384d38
+  variables: {}
